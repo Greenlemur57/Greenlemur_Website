@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+ <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+<head>
+  <meta charset="UTF-8">
+  <title>Photos</title>
+   <link rel="icon" type="image/x-icon" href="/images/greenlemur.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 10px 0;
+    }
+
+    figure {
+      margin: 0;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figcaption {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #555;
+      background-color: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+h1 {text-align: center;}
+  </style>
+</head>
+<body>
+  <a href="index.html" text-align: center; class="home-link">Home</a>
+  <h1 style="color: black;">Photos</h1>
+  <h2>Trains</h2>
+  <div class="gallery">
+    <figure>
+      <img src="images/41313_wootton.jpg" alt="">
+      <figcaption>Steam loco 41313 at Wootton station on the Isle of Whight Steam Railway</figcaption>
+    </figure>
+    <figure>
+      <img src="images/484001_shanklin.jpg" alt="">
+      <figcaption>484001 at Shanklin on the Island Line</figcaption>
+    </figure>
+    <figure>
+      <img src="images/745009_lon_liv_st.jpg" alt="">
+      <figcaption>745009 at London Liverpool Street</figcaption>
+    </figure>
+  </div>
+<hr>
+  <h2>Planes</h2>
+  <div class="gallery">
+    <figure>
+      <img src="images/A6-EEJ_EK_A388.jpg" alt="">
+      <figcaption>Emirates A380-861 A6-EEJ</figcaption>
+    </figure>
+    <figure>
+      <img src="images/VT-JRH_AIC_A359.jpg" alt="">
+      <figcaption>Air India A350-941 VT-JRH</figcaption>
+    </figure>
+  </div>
+<hr>
+  <h2>Other</h2>
+  <div class="gallery">
+    <figure>
+      <img src="images/flowers.jpg" alt="">
+      <figcaption>Some pink hydrangeas</figcaption>
+    </figure>
+    <figure>
+      <img src="images/bee_lavender.jpg" alt="">
+      <figcaption>A bee pollinating some lavender</figcaption>
+    </figure>
+  </div>
+<hr>  
+  <p> all photos taken by me unless stated otherwise </p>
+  
+</body>
+</html>

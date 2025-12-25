@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" type="image/x-icon" href="/images/greenlemur.png">
+  </head>
+  <body>
+
+ <a href="index.html" class="home-link">Home</a>
+  <h1 style="color: black; text-align: center; ">My Projects</h1>
+
+<hr size="3" color=#000>
+
+
+
+
+
+
+<section class="stationary">
+  <h2>Stationary</h2>
+  <p style="text-align: center;"> <a href="https://github.com/TangledWiresOfficial/Stationary" target="_blank">Stationary</a> is a an app being built by myself and <a href="https://tangledwires.co.uk/" target="_blank">TangledWires</a> to track which train stations you have visited in the UK. We are currently in the building process, and are working on the London area and it's transport networks, before we epxand to the rest of the UK. </p>
+</section>
+
+<style>
+  .stationary {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+</style>
+
+<hr>
+
+<section class="tube_project">
+  <h2>My Tube Website</h2>
+  <p style="text-align: center;"> In 2023, as part of a school project, I made a website about the London Underground Network, with 3 pages. I have only made some small modifications to the pages before uploading it <a href="https://greenlemur57.neocities.org/tube_project/London-Underground" target="_blank">here</a> </p>
+</section>
+
+<style>
+  .tube_project {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+</style>
+
+<hr>
+
+
+<!-- rock paper scissors -->
+<section class="rps-game">
+  <h2>Rock Paper Scissors</h2>
+  <p> Play against a computer!</p>
+  <p id="prompt">Choose your move:</p>
+
+  <div class="rps-buttons" id="rps-buttons">
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+  </div>
+
+  <div id="rps-result" class="rps-result" hidden></div>
+
+  <div id="play-again" class="play-again" hidden>
+    <button onclick="resetGame()">Play again</button>
+  </div>
+</section>
+
+<style>
+  .rps-game {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .rps-buttons button {
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #29872c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .rps-buttons button:hover {
+    background-color: #005a9e;
+  }
+
+  .rps-result {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .winner-text {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .play-again button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #29872c;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .play-again button:hover {
+    background-color: #222;
+  }
+</style>
+
+<script>
+  function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+
+  function determineWinner(user, computer) {
+    if (user === computer) return "It's a tie!";
+    if (
+      (user === "rock" && computer === "scissors") ||
+      (user === "paper" && computer === "rock") ||
+      (user === "scissors" && computer === "paper")
+    ) return "You win!";
+    return "Computer wins!";
+  }
+
+  function playGame(userChoice) {
+    const computerChoice = getComputerChoice();
+    const outcome = determineWinner(userChoice, computerChoice);
+
+    // Hide buttons and prompt
+    document.getElementById("rps-buttons").hidden = true;
+    document.getElementById("prompt").hidden = true;
+
+    // Show result screen
+    const resultDiv = document.getElementById("rps-result");
+    resultDiv.innerHTML = `
+      You chose: <strong>${userChoice}</strong><br>
+      Computer chose: <strong>${computerChoice}</strong><br>
+      <span class="winner-text">${outcome}</span>
+    `;
+    resultDiv.hidden = false;
+
+    // Show Play Again button
+    document.getElementById("play-again").hidden = false;
+  }
+
+  function resetGame() {
+    // Clear and hide result
+    document.getElementById("rps-result").innerHTML = "";
+    document.getElementById("rps-result").hidden = true;
+
+    // Hide play again
+    document.getElementById("play-again").hidden = true;
+
+    // Show buttons and prompt
+    document.getElementById("rps-buttons").hidden = false;
+    document.getElementById("prompt").hidden = false;
+  }
+</script>
+<!-- rock paper scissors END -->
+<hr>
+
+
+
+
+
+
+
+
+
+<!--random num gen-->
+<section class="rng-box">
+  <h2>Random Number Generator</h2>
+  <p> Entered values must be integers.</p>
+
+  <label for="min">Minimum value:</label><br />
+  <input type="number" id="min" placeholder="e.g. 1" class="rng-input" /><br />
+
+  <label for="max">Maximum value:</label><br />
+  <input type="number" id="max" placeholder="e.g. 100" class="rng-input" /><br />
+
+  <button onclick="generateRandom()" class="rng-button">Generate</button>
+
+  <p id="result" class="rng-result" style="display: none;"></p>
+</section>
+
+<style>
+  .rng-box {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .rng-input {
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #29872c;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rng-button {
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #29872c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .rng-button:hover {
+    background-color: #005a9e;
+  }
+
+  .rng-result {
+    margin-top: 15px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    background-color: #29872c;
+    color: white;
+  }
+</style>
+
+<script>
+  function generateRandom() {
+    const min = parseInt(document.getElementById('min').value);
+    const max = parseInt(document.getElementById('max').value);
+    const result = document.getElementById('result');
+
+    let message = "";
+
+    if (isNaN(min) || isNaN(max)) {
+      message = "Please enter valid numbers.";
+    } else if (min > max) {
+      message = "Minimum value must be less than or equal to maximum.";
+    } else {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      message = `Your random number is: ${randomNumber}`;
+    }
+
+    if (message) {
+      result.textContent = message;
+      result.style.display = "block";
+    } else {
+      result.style.display = "none";
+    }
+  }
+</script>
+<!-- random num gen END -->
+<hr>
+
+
+
+
+
+  </body>
+</html>
